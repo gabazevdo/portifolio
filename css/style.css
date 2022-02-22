@@ -2,19 +2,23 @@
 
 :root {
   /* DarkMode */
-  --bg1: #181818;
-  --bg2: #212121;
+  --primary: #181818;
+  --primary-Opacity: rgb(24, 24, 24, 0.65);
+  --secundary: #212121;
 
   --colorGrayLight: #c4c4c4;
   --colorWhite: #fff;
   --colorBlue: #00d2df;
+  --colorPink: #d24074;
+  --colorPurple: #6518b4;
+  --colorPurpleLight: #9358f7;
   --gradiente-purple: linear-gradient(269.96deg, #10d7e2 0%, #9358f7 100%);
   --gradient-pink: linear-gradient(270.06deg, #6518b4 0%, #d24074 101.62%);
 }
 
 /* .light-mode:root {
-  --bg1: #121212;
-  --bg2: #151515;
+  --primary: #121212;
+  --secundary: #151515;
 
   --colorGrayLight: #c4c4c4;
   --colorWhite: #fff;
@@ -27,6 +31,24 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary);
+}
+
+/* Barra de rolagem */
+
+*::-webkit-scrollbar {
+  width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--colorPurple);
+  border: 1px solid var(--colorPurpleLight);
 }
 
 html {
@@ -34,18 +56,8 @@ html {
   font-size: 16px;
 }
 
-/* html[data-theme="light"] {
-  background-color: var(--bgLight);
-  color: var(--colorTextLight);
-}
-
-html[data-theme="dark"] {
-  background-color: var(--bgDark);
-  color: var(--colorTextDark);
-} */
-
 body {
-  background-color: var(--bg1);
+  background-color: var(--primary);
   color: var(--colorGrayLight);
   height: 100vh;
   width: 100%;
@@ -59,14 +71,18 @@ header {
   justify-content: space-between;
   width: 100%;
   padding: 2% 10%;
-  background: var(--bg1);
+
+  background: var(--primary-Opacity);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-
-  border-bottom: 1px solid rgba(32, 32, 32);
+  border-bottom: 1px solid rgba(114, 114, 126, 0.2);
+  z-index: 999;
   width: 100%;
   position: fixed;
   top: 0;
+  left: 0;
+
+  border-bottom: 1px solid rgba(32, 32, 32);
 }
 header h3 {
   color: var(--colorBlue);
@@ -92,13 +108,35 @@ header h3 {
   border-bottom: 3px solid #ea0000;
 }
 
+#gabazevdo {
+  display: flex;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  color: #212121;
+  font-weight: 700;
+  width: 100%;
+  z-index: -1;
+
+  align-items: center;
+}
+
+#gabazevdo > span {
+  max-height: 100vh;
+  opacity: 0.2;
+  max-width: 100%;
+  line-height: 80%;
+  font-size: 35rem;
+  overflow-wrap: break-word;
+}
+
 /* Seções */
 section {
   padding: 2% 10%;
 }
 
 /* Home */
-#Home {
+#home {
   display: flex;
   align-items: center;
   justify-content: initial;
@@ -112,14 +150,13 @@ section {
   height: 40%;
 }
 .apresentacaoHome h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   margin-top: 2%;
   color: var(--colorBlue);
   text-transform: uppercase;
 }
 
-.apresentacaoHome > h2 >
-h3 {
+.apresentacaoHome > h2 > h3 {
   color: var(--colorWhite);
   text-transform: uppercase;
 }
@@ -130,7 +167,6 @@ a {
   color: currentColor;
   outline: none;
 }
-
 
 .btns {
   display: flex;
@@ -156,7 +192,7 @@ a {
   flex: 1;
 
   font-weight: 600;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .btn i {
@@ -180,9 +216,8 @@ a {
   background: var(--gradient-pink) border-box;
 }
 
-
 .btn::after {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   position: absolute;
@@ -193,14 +228,93 @@ a {
   mask-composite: exclude;
 }
 
+/* Sobre mim */
 
+#sobre {
+  background-color: var(--secundary);
+  height: 80vh;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre{  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding-right: 20%;
+  
+}
+
+.minha-foto{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+height: 70%;
+width: 35%;
+border-left: 8px solid var(--colorBlue);
+border-radius: 4px 0 0 4px;
+background-color: var(--primary);
+}
+.minha-foto p{
+  color: var(--colorBlue);
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.sobre-mim {
+  height: 100%;
+  width: 50%;
+  padding-top: 8%;
+}
+.textos-sobre h2, h3{
+  margin-bottom: 5% ;
+}
+
+.textos-sobre p{
+  margin-bottom: 1% ;
+  text-align: justify;
+}
+
+.tags-tech{
+  margin: 5% 0;
+}
+
+/* Experiencia */
+#experiencia {
+  background-color: var(--primary);
+  height: 100vh;
+  width: 100%;
+}
+
+/* Projetos */
+
+#projetos {
+  background-color: var(--secundary);
+  height: 100vh;
+  width: 100%;
+}
+
+/* Contato */
+
+#contato {
+  background-color: var(--primary);
+  height: 100vh;
+  width: 100%;
+}
 
 footer {
+  background-color: var(--secundary);
   width: 100%;
   padding: 2% 10%;
   color: var(--colorGrayLight);
   display: flex;
   justify-content: space-between;
-  position: fixed;
+  position: relative;
   bottom: 0;
 }
