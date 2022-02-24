@@ -6,9 +6,8 @@
   --primary-Opacity: rgb(24, 24, 24, 0.65);
   --secundary: #212121;
 
-  --colorGrayLight: #c4c4c4;
-  --colorWhite: #fff;
-  --colorBlue: #00d2df;
+  --color-text-primary: #c4c4c4;
+  --color-text-secundary: #00d2df;
   --colorPink: #d24074;
   --colorPurple: #6518b4;
   --colorPurpleLight: #9358f7;
@@ -16,16 +15,19 @@
   --gradient-pink: linear-gradient(270.06deg, #6518b4 0%, #d24074 101.62%);
 }
 
-/* .light-mode:root {
-  --primary: #121212;
-  --secundary: #151515;
+.light-mode:root {
+  --primary: #E6E8EB;
+  --primary-Opacity: #E6E8EBa6;
+  --secundary: #FBFCFC;
 
-  --colorGrayLight: #c4c4c4;
-  --colorWhite: #fff;
-  --colorBlue: #00d2df;
+  --color-text-primary: #0e0e0e;
+  --color-text-secundary: #223858;
+  --colorPink: #d24074;
+  --colorPurple: #223858;
+  --colorPurpleLight: #0f2f5e;
   --gradiente-purple: linear-gradient(269.96deg, #10d7e2 0%, #9358f7 100%);
   --gradient-pink: linear-gradient(270.06deg, #6518b4 0%, #d24074 101.62%);
-} */
+}
 
 * {
   padding: 0;
@@ -34,6 +36,8 @@
 
   scrollbar-width: thin;
   scrollbar-color: var(--primary);
+  /* transition: all .5s;*/
+
 }
 
 /* Barra de rolagem */
@@ -58,7 +62,7 @@ html {
 
 body {
   background-color: var(--primary);
-  color: var(--colorGrayLight);
+  color: var(--color-text-primary);
   height: 100vh;
   width: 100%;
 }
@@ -75,18 +79,18 @@ header {
   background: var(--primary-Opacity);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(114, 114, 126, 0.2);
+  border-bottom: var(--primary-Opacity);
   z-index: 999;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
 
-  border-bottom: 1px solid rgba(32, 32, 32);
 }
 header h3 {
-  color: var(--colorBlue);
-  font-weight: 500;
+  color: var(--color-text-secundary);
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 #menu ul {
   display: flex;
@@ -94,18 +98,19 @@ header h3 {
   list-style: none;
   width: 100%;
   gap: 2rem;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 #menu ul li a {
-  color: var(--colorGrayLight);
+  color: var(--color-text-primary);
   text-decoration: none;
-  transition: all 0.5s;
+  transition: all .2s ;
 }
 
 #menu ul li a:hover {
-  background-color: #d6d6d6;
-  color: #6d6d6d;
-  border-bottom: 3px solid #ea0000;
+  color: #686464;
+  border-bottom: 3px solid var(--color-text-secundary);
 }
 
 #gabazevdo {
@@ -113,7 +118,7 @@ header h3 {
   position: absolute;
   height: 100vh;
   width: 100%;
-  color: #212121;
+  color: var(--secundary);
   font-weight: 700;
   width: 100%;
   z-index: -1;
@@ -142,6 +147,7 @@ section {
   justify-content: initial;
   width: 100%;
   height: 100vh;
+
 }
 
 .apresentacaoHome {
@@ -152,12 +158,11 @@ section {
 .apresentacaoHome h1 {
   font-size: 5rem;
   margin-top: 2%;
-  color: var(--colorBlue);
+  color: var(--color-text-secundary);
   text-transform: uppercase;
 }
 
 .apresentacaoHome > h2 > h3 {
-  color: var(--colorWhite);
   text-transform: uppercase;
 }
 /* Botões */
@@ -234,63 +239,125 @@ a {
   background-color: var(--secundary);
   height: 80vh;
   width: 100%;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.sobre{  
+.sobre {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
   width: 100%;
   padding-right: 20%;
-  
+  border-right: 10px solid var(--primary);
+
 }
 
-.minha-foto{
+.minha-foto {
   display: flex;
   align-items: center;
   justify-content: center;
-height: 70%;
-width: 35%;
-border-left: 8px solid var(--colorBlue);
-border-radius: 4px 0 0 4px;
-background-color: var(--primary);
+  height: 70%;
+  width: 41%;
+  border-left: 8px solid var(--color-text-secundary);
+  border-radius: 4px 0 0 4px;
+  background-color: var(--primary);
 }
-.minha-foto p{
-  color: var(--colorBlue);
-  font-size: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
+.minha-foto img {
+ width: 100%;
+
 }
+
 .sobre-mim {
   height: 100%;
   width: 50%;
   padding-top: 8%;
+
 }
-.textos-sobre h2, h3{
-  margin-bottom: 5% ;
+.textos-sobre h2,
+.textos-sobre h3 {
+  margin-bottom: 5%;
 }
 
-.textos-sobre p{
-  margin-bottom: 1% ;
+.textos-sobre > p {
+  margin-bottom: 1%;
   text-align: justify;
 }
 
-.tags-tech{
-  margin: 5% 0;
+.tags-tech {
+  margin: 10% 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tags-tech svg{
+  color: var(--color-text-secundary);
+  width: 8%;
+  transition: all .2s;
+}
+
+.tags-tech svg:hover{
+  color: var(--colorPink);
+
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+
 }
 
 /* Experiencia */
 #experiencia {
   background-color: var(--primary);
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
+
+#experiencia .experiencia{
+  font-size: 3rem;
+  margin-left: 15%;
+}
+
+.timeline {
+	width: 80%;
+	margin-left: 10%;
+	margin-bottom: 40px;
+}
+
+hr{
+  color: var(--colorPink);
+}
+
+
+.timeline .column {
+	margin: 40px 40px 40px 120px;
+}
+
+.timeline .column .title h3 {
+	font-size: 7rem;
+	color: rgba(110, 110, 110, 0.25);
+	letter-spacing: 3px;
+}
+
+.timeline .column .title h2 {
+	margin-top: -60px;
+	font-size: 33px;
+}
+
+.timeline .column .description p {
+	font-size: 1.1rem;
+	line-height: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.timeline .column .description {
+	border-left: 1px solid var(--color-text-secundary);
+}
+
 
 /* Projetos */
 
@@ -312,9 +379,14 @@ footer {
   background-color: var(--secundary);
   width: 100%;
   padding: 2% 10%;
-  color: var(--colorGrayLight);
+  color: var(--color-text-primary);
   display: flex;
   justify-content: space-between;
   position: relative;
   bottom: 0;
+}
+
+footer p{
+  color: #105f63;
+  font-weight: 700;
 }
