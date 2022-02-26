@@ -10,6 +10,7 @@
       href="./img/fotoefeitos.com_-removebg-preview.png"
     />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
@@ -45,9 +46,14 @@
       </div>
 
       <section id="home">
-        <div class="apresentacaoHome">
+        <div class="apresentacaoHome" 
+        data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0"
+     >
           <h2>Olá, eu sou</h2>
-          <h1>Gabriel Azevedo</h1>
+          <h1 >Gabriel Azevedo</h1>
           <h3>Front-end developer and Design UI-UX</h3>
 
           <div class="btns">
@@ -93,6 +99,8 @@
             </a>
           </div>
         </div>
+
+        <div class="home"></div>
       </section>
 
       <section id="sobre">
@@ -101,21 +109,22 @@
             <img
               src="https://github.com/gabazevdo.png"
               alt="Foto de perfil github"
+              data-aos="zoom-out-up" data-aos-duration="1400"
             />
           </div>
           <div class="sobre-mim">
             <div class="textos-sobre">
-              <h2>Quem sou</h2>
-              <h3>Itapevi, SP</h3>
-              <p>
+              <h2 data-aos="zoom-out-down" data-aos-duration="1400" >Quem sou</h2>
+              <h3 data-aos="zoom-out-down" data-aos-duration="1500">Itapevi, SP</h3> 
+              <p data-aos="zoom-out-down" data-aos-duration="1700">
                 Meu nome é Gabriel Azevedo, tenho 31 anos, casado e papai de uma
                 princesa linda e um lindo pequeno principe.
               </p>
-              <p>
+              <p data-aos="zoom-out-down" data-aos-duration="1500">
                 Sou freelancer como Front-end developer e UI Designer.
                 Desenvolvo interfaces modernas e de alta qualidade
               </p>
-              <p>
+              <p data-aos="zoom-out-down" data-aos-duration="1400">
                 Gosto demais de tecnologia, e estou me dedicando diariamente
                 para ser um exímio profissional.
               </p>
@@ -236,99 +245,100 @@
         </div>
       </section>
 
-      <section id="projetos">
-        <h2 class="experiencia">Projetos</h2>
+      <section id="experiencia">
+        <div class="content">
+          <div class="left">
+            <h2>experiência</h2>
+            <ul>
+              <li class="border-li" data-aos="zoom-out-down" data-aos-duration="1400" >Digital House</li>
+               <li data-aos="zoom-out-down" data-aos-duration="1600">Código Fonte TV</li>
+               <li data-aos="zoom-out-down" data-aos-duration="1800">Zuplae</li>
+               <li data-aos="zoom-out-down" data-aos-duration="2000">ContWeb</li>
+               <li data-aos="zoom-out-down" data-aos-duration="2200">iuricode</li>
+               <li data-aos="zoom-out-down" data-aos-duration="2300">Freelancer</li>
+            </ul>
+          </div>
+          <div class="right" data-aos="fade-right" data-aos-duration="1400">
+            <div class="title">
+              <h2>Professor conteudista em Frontend</h2>
+              <span>Nov 2021 - Atual</span>
+            </div>
+            <span class="tag">Digital House</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              eu purus<br />
+              risus. Ut rutrum sollicitudin purus in accumsan. Proin at mattis
+              metus.<br />
+              Nullam sit amet mauris condimentum, volutpat augue in, mattis
+              urna.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section id="experiencia">
-        <h2 class="experiencia">Experiências</h2>
-        <hr />
-
-        <div class="timeline">
-          <div class="column">
-            <div class="title">
-              <h3>Atual</h3>
-              <h2>
-                Montador de Drywall <br />
-                AMD Gesso
-              </h2>
-            </div>
-            <div class="description">
-              <p>Montagem e manutenção predial e residencial.</p>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="title">
-              <h3>2020</h3>
-              <h2>
-                Assistente de Expansão <br />
-                CacauShow
-              </h2>
-            </div>
-            <div class="description">
+      <section id="projetos" class="projects">
+        <h2>projetos</h2>
+        <div class="content">
+          <div class="cards">
+            <div class="card" data-aos="fade-right">
+              <div class="card-img">FOTO</div>
+              <h3>Nome do projeto</h3>
               <p>
-                Assistência aos franqueados da maior franquia de chocolates
-                finos do mundo. Cuidando dos repasses de lojas, alterações
-                societárias. Feliz Hoje!
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus blandit interdum odio eu varius.
               </p>
+              <span>Tecnologias usadas no projeto</span>
+              <a href=""
+                ><button><i class="fas fa-link"></i>Visualizar</button></a
+              >
             </div>
-          </div>
-
-          <div class="column">
-            <div class="title">
-              <h3>2017</h3>
-              <h2>
-                Motorista de aplicativos <br />
-                Uber ~ 99
-              </h2>
-            </div>
-            <div class="description">
+            <div class="card" data-aos="fade-left">
+              <div class="card-img">FOTO</div>
+              <h3>Nome do projeto</h3>
               <p>
-                Trabalho autônomo com carro próprio, transportando passageiros
-                da Uber e 99.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus blandit interdum odio eu varius.
               </p>
+              <span>Tecnologias usadas no projeto</span>
+              <a href=""
+                ><button><i class="fas fa-link"></i>Visualizar</button></a
+              >
             </div>
-          </div>
-
-          <div class="column">
-            <div class="title">
-              <h3>2014</h3>
-              <h2>
-                Assistente Administrativo <br />
-                R. Progresso
-              </h2>
-            </div>
-            <div class="description">
+            <div class="card" data-aos="fade-right">
+              <div class="card-img">FOTO</div>
+              <h3>Nome do projeto</h3>
               <p>
-                Atendimento telefônico e pessoal aos clientes do grupo
-                Cemitérios Associados, acordos, elaboração e preenchimento de
-                planilhas, treinamento de novos funcionários, auxilio ao
-                profissional de TI, suporte ao usuário.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus blandit interdum odio eu varius.
               </p>
+              <span>Tecnologias usadas no projeto</span>
+              <a href=""
+                ><button><i class="fas fa-link"></i>Visualizar</button></a
+              >
             </div>
-          </div>
-
-          <div class="column">
-            <div class="title">
-              <h3>2010</h3>
-              <h2>
-                Assitente Financeiro <br />
-                Lojas Eskala
-              </h2>
-            </div>
-            <div class="description">
+            <div class="card" data-aos="fade-left">
+              <div class="card-img">FOTO</div>
+              <h3>Nome do projeto</h3>
               <p>
-                Contas à pagar e receber; Pagamentos de funcionários; Pagamentos
-                de fornecedores;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus blandit interdum odio eu varius.
               </p>
+              <span>Tecnologias usadas no projeto</span>
+              <a href=""
+                ><button><i class="fas fa-link"></i>Visualizar</button></a
+              >
             </div>
           </div>
         </div>
       </section>
 
       <section id="contato">
-        <div id="container">
+        <div
+          id="container"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <h2>&bull; Entre em contato &bull;</h2>
 
           <form action="#" method="post" id="contact_form">
@@ -389,7 +399,7 @@
             </div>
 
             <div class="submit">
-              <input type="submit" value="Enviar" id="form_button" />
+              <button type="submit" id="form_button">Enviar</button>
             </div>
           </form>
           <!-- // End form -->
@@ -410,6 +420,10 @@
       checkbox.addEventListener("change", () => {
         html.classList.toggle("light-mode");
       });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
